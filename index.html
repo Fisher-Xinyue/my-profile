@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>于欣悦 Fisher Yu | 个人作品集</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #000;
+            color: #fff;
+            scroll-behavior: smooth;
+        }
+        .purple-gradient-text {
+            background: linear-gradient(135deg, #a855f7 0%, #d8b4fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: #a855f7;
+            transform: translateY(-8px);
+        }
+        .hero-glow {
+            position: absolute;
+            top: -10%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+        .tag-pill {
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 0.85rem;
+            color: #d8b4fe;
+        }
+        .thumbnail-card {
+            aspect-ratio: 9/16;
+            background: #111;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+            display: block;
+        }
+        .thumbnail-card:hover {
+            border-color: #a855f7;
+            transform: scale(1.02);
+        }
+        .thumbnail-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .thumbnail-card:hover img {
+            transform: scale(1.1);
+        }
+        .overlay-hint {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .thumbnail-card:hover .overlay-hint {
+            opacity: 1;
+        }
+        .page-transition {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .hidden-page {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            color: #a855f7;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            color: #d8b4fe;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <div class="hero-glow"></div>
+
+    <!-- 导航栏 -->
+    <nav class="fixed w-full z-50 px-8 py-5 flex justify-between items-center backdrop-blur-lg border-b border-white/5">
+        <div class="text-xl font-bold tracking-tighter cursor-pointer" onclick="showPage('main')">FISHER <span class="purple-gradient-text">YU</span></div>
+        <div id="nav-links" class="hidden md:flex space-x-10 text-xs font-semibold uppercase tracking-widest text-gray-400">
+            <a href="#about" class="hover:text-white transition">首页</a>
+            <a href="#experience" class="hover:text-white transition">实习经历</a>
+            <a href="#media" class="hover:text-white transition">媒体制作</a>
+            <a href="#influencer" class="hover:text-white transition">自媒体</a>
+        </div>
+        <a href="mailto:yuxinyuejoy@qq.com" class="px-6 py-2 bg-white text-black rounded-full text-xs font-bold hover:bg-purple-500 transition-all uppercase tracking-tighter">Contact</a>
+    </nav>
+
+    <!-- 主页 -->
+    <main id="main-page" class="page-transition">
+        <!-- 自我介绍 -->
+        <section id="about" class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+            <div class="mb-6 inline-flex items-center space-x-2 bg-white/5 px-4 py-1.5 rounded-full border border-white/10">
+                <span class="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
+                <span class="text-xs font-medium text-gray-300 tracking-wide uppercase">ENTJ / 北京 · 上海 · 瑞典 · 纽约</span>
+            </div>
+            <h1 class="text-5xl md:text-8xl font-extrabold mb-8 tracking-tight">
+                探索 <span class="purple-gradient-text">营销</span> 与 <br>创意增长的边界
+            </h1>
+            <p class="text-gray-300 text-lg md:text-2xl font-light mb-2">华东师大市场营销硕士</p>
+            <p class="text-purple-400/80 text-lg md:text-2xl font-light">18岁开始运营社媒的数字内容创作者</p>
+        </section>
+
+        <!-- 1. 实习工作经历 (4段) -->
+        <section id="experience" class="py-32 px-6 max-w-6xl mx-auto">
+            <h2 class="section-title mb-16">实习工作经历 <span class="text-purple-500">.</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- UN -->
+                <div class="glass-card p-10 rounded-[2rem] relative overflow-hidden group">
+                    <div class="tag-pill inline-block mb-6 uppercase tracking-widest">2025.02 - 2025.08</div>
+                    <h4 class="text-3xl font-bold mb-4">联合国纽约总部</h4>
+                    <p class="text-gray-400 text-sm italic mb-6">项目管理信息与通信技术办公室 (OICT)</p>
+                    <ul class="text-gray-400 text-sm space-y-3 font-light">
+                        <li>• 主导 UN Open Source Week 全球线上推广，联动 LinkedIn 等大厂</li>
+                        <li>• 达成 1100+ 注册及 300+ 转发，单帖互动量 1000+</li>
+                    </ul>
+                </div>
+                <!-- Apple -->
+                <div class="glass-card p-10 rounded-[2rem] relative overflow-hidden group">
+                    <div class="tag-pill inline-block mb-6 uppercase tracking-widest">2024.04 - 2024.08</div>
+                    <h4 class="text-3xl font-bold mb-4">Apple</h4>
+                    <p class="text-gray-400 text-sm italic mb-6">苹果广告 (ASA) 亚太渠道合作伙伴团队</p>
+                    <ul class="text-gray-400 text-sm space-y-3 font-light">
+                        <li>• 负责中日市场激励结算审核，识别区域高潜力增长市场</li>
+                        <li>• 制定广告产品 GTM 策略，深度调研亚太国家渠道优先级</li>
+                    </ul>
+                </div>
+                <!-- Loreal -->
+                <div class="glass-card p-10 rounded-[2rem] relative overflow-hidden group">
+                    <div class="tag-pill inline-block mb-6 uppercase tracking-widest">2023.10 - 2024.03</div>
+                    <h4 class="text-3xl font-bold mb-4">欧莱雅集团</h4>
+                    <p class="text-gray-400 text-sm italic mb-6">圣罗兰美妆 (YSL Beauty) 市场营销</p>
+                    <ul class="text-gray-400 text-sm space-y-3 font-light">
+                        <li>• 负责社媒 KOL 内容排期及本土化转化效果追踪</li>
+                        <li>• 提炼竞品差异化卖点，辅助新品营销策略落地</li>
+                    </ul>
+                </div>
+                <!-- Duolingo -->
+                <div class="glass-card p-10 rounded-[2rem] relative overflow-hidden group">
+                    <div class="tag-pill inline-block mb-6 uppercase tracking-widest">2022.10 - 2023.08</div>
+                    <h4 class="text-3xl font-bold mb-4">多邻国 Duolingo</h4>
+                    <p class="text-gray-400 text-sm italic mb-6">中国办公室 数字营销</p>
+                    <ul class="text-gray-400 text-sm space-y-3 font-light">
+                        <li>• 策划 20 条百万播放视频，半年涨粉 13w+，激发 UGC 增长</li>
+                        <li>• 负责首场品牌直播，点赞超 20W，提升 IP 品牌粘性</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 媒体制作与运营 (跳转详情) -->
+        <section id="media" class="py-32 bg-zinc-950/50">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="section-title mb-16 text-right"><span class="text-purple-500">.</span> 媒体制作与运营</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div onclick="showPage('media-duolingo')" class="cursor-pointer group">
+                        <div class="thumbnail-card glass-card flex items-center justify-center">
+                            <span class="text-6xl opacity-20">🎬</span>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex flex-col justify-end p-8">
+                                <h4 class="text-xl font-bold">多邻国短视频</h4>
+                                <p class="text-gray-400 text-xs mt-2">点击查看作品缩略图</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div onclick="showPage('media-global')" class="cursor-pointer group">
+                        <div class="thumbnail-card glass-card flex items-center justify-center">
+                            <span class="text-6xl opacity-20">🌐</span>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex flex-col justify-end p-8">
+                                <h4 class="text-xl font-bold">海外官方社媒</h4>
+                                <p class="text-gray-400 text-xs mt-2">点击查看账号推文</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div onclick="showPage('media-assets')" class="cursor-pointer group">
+                        <div class="thumbnail-card glass-card flex items-center justify-center">
+                            <span class="text-6xl opacity-20">📁</span>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex flex-col justify-end p-8">
+                                <h4 class="text-xl font-bold">其他媒体素材</h4>
+                                <p class="text-gray-400 text-xs mt-2">点击查看物料档案</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 自媒体运营 (跳转详情) -->
+        <section id="influencer" class="py-32 px-6 max-w-6xl mx-auto">
+            <h2 class="section-title mb-16">自媒体运营 <span class="text-purple-500">.</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div onclick="showPage('influ-bili')" class="glass-card p-10 rounded-[2.5rem] flex items-center space-x-6 cursor-pointer group">
+                    <div class="w-20 h-20 bg-pink-500/10 rounded-2xl flex items-center justify-center text-4xl shrink-0">📺</div>
+                    <div>
+                        <h4 class="text-2xl font-bold group-hover:text-purple-400 transition">Bilibili 学习类博主</h4>
+                        <p class="text-gray-400 text-sm mt-1">点击查看视频封面缩略图</p>
+                    </div>
+                </div>
+                <div onclick="showPage('influ-red')" class="glass-card p-10 rounded-[2.5rem] flex items-center space-x-6 cursor-pointer group">
+                    <div class="w-20 h-20 bg-red-500/10 rounded-2xl flex items-center justify-center text-4xl shrink-0">📱</div>
+                    <div>
+                        <h4 class="text-2xl font-bold group-hover:text-purple-400 transition">小红书科技博主</h4>
+                        <p class="text-gray-400 text-sm mt-1">点击查看笔记封面缩略图</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 其他能力 (跳转详情) -->
+        <section id="skills" class="py-32 px-6 max-w-6xl mx-auto">
+            <h2 class="section-title mb-16">其他能力 <span class="text-purple-500">.</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div onclick="showPage('skill-live')" class="glass-card p-8 rounded-3xl text-center cursor-pointer group">
+                    <div class="text-4xl mb-4">🎤</div>
+                    <h5 class="text-xl font-bold">短视频主播</h5>
+                    <p class="text-gray-500 text-xs mt-2">点击查看活动缩略图</p>
+                </div>
+                <div onclick="showPage('skill-report')" class="glass-card p-8 rounded-3xl text-center cursor-pointer group">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h5 class="text-xl font-bold">学术汇报</h5>
+                    <p class="text-gray-500 text-xs mt-2">点击查看学术现场</p>
+                </div>
+                <div onclick="showPage('skill-host')" class="glass-card p-8 rounded-3xl text-center cursor-pointer group">
+                    <div class="text-4xl mb-4">🗣️</div>
+                    <h5 class="text-xl font-bold">双语主持</h5>
+                    <p class="text-gray-500 text-xs mt-2">点击查看主持影像</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 详情页面容器 -->
+
+    <!-- 多邻国详情 -->
+    <section id="media-duolingo" class="page-transition hidden-page min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto">
+        <div onclick="showPage('main')" class="back-btn">← 返回首页</div>
+        <h2 class="text-4xl font-extrabold mb-4">多邻国短视频作品集</h2>
+        <p class="text-gray-400 mb-12">点击缩略图跳转至作品原网页</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+            <!-- 替换 href 为作品链接，src 为封面图路径 -->
+            <a href="https://v.douyin.com/example1/" target="_blank" class="thumbnail-card">
+                <img src="assets/duo-1.jpg" onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-zinc-600\'>封面图1</div>'">
+                <div class="overlay-hint"><span class="text-white text-xs border border-white px-3 py-1 rounded-full">查看作品</span></div>
+            </a>
+            <a href="https://v.douyin.com/example2/" target="_blank" class="thumbnail-card">
+                <img src="assets/duo-2.jpg" onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-zinc-600\'>封面图2</div>'">
+                <div class="overlay-hint"><span class="text-white text-xs border border-white px-3 py-1 rounded-full">查看作品</span></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- B站详情 -->
+    <section id="influ-bili" class="page-transition hidden-page min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto">
+        <div onclick="showPage('main')" class="back-btn">← 返回首页</div>
+        <h2 class="text-4xl font-extrabold mb-10">Bilibili 视频作品</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <a href="https://b23.tv/example" target="_blank" class="block group">
+                <div class="aspect-video bg-zinc-900 rounded-3xl overflow-hidden border border-white/5 relative">
+                    <img src="assets/bili-cover.jpg" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-zinc-800\'>视频封面</div>'">
+                    <div class="overlay-hint"><span class="text-white text-xs border border-white px-3 py-1 rounded-full">点击播放</span></div>
+                </div>
+                <p class="mt-4 text-gray-400 text-sm">高效笔记法分享</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- 小红书详情 -->
+    <section id="influ-red" class="page-transition hidden-page min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto">
+        <div onclick="showPage('main')" class="back-btn">← 返回首页</div>
+        <h2 class="text-4xl font-extrabold mb-10">小红书笔记作品</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <a href="https://www.xiaohongshu.com/example" target="_blank" class="thumbnail-card">
+                <img src="assets/red-1.jpg" onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-zinc-800\'>笔记封面</div>'">
+                <div class="overlay-hint"><span class="text-white text-xs border border-white px-3 py-1 rounded-full">查看笔记</span></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- 主播/汇报/主持 详情页 (以主持为例) -->
+    <section id="skill-host" class="page-transition hidden-page min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto">
+        <div onclick="showPage('main')" class="back-btn">← 返回首页</div>
+        <h2 class="text-4xl font-extrabold mb-10">双语主持现场</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="aspect-[4/5] glass-card rounded-3xl overflow-hidden">
+                <img src="assets/host-1.jpg" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-zinc-800\'>现场照1</div>'">
+            </div>
+            <div class="aspect-[4/5] glass-card rounded-3xl overflow-hidden">
+                <img src="assets/host-2.jpg" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-zinc-800\'>现场照2</div>'">
+            </div>
+        </div>
+    </section>
+
+    <!-- 基础占位详情页 (补全逻辑) -->
+    <section id="media-global" class="page-transition hidden-page min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto"><div onclick="showPage('main')" class="back-btn">← 返回首页</div><h2 class="text-4xl font-extrabold">海外社媒推文</h2></section>
+    <section id="media-assets" class="page-transition hidden-page min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto"><div onclick="showPage('main')" class="back-btn">← 返回首页</div><h2 class="text-4xl font-extrabold">物料档案</h2></section>
+    <section id="skill-live" class="page-transition hidden-page min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto"><div onclick="showPage('main')" class="back-btn">← 返回首页</div><h2 class="text-4xl font-extrabold">主播现场</h2></section>
+    <section id="skill-report" class="page-transition hidden-page min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto"><div onclick="showPage('main')" class="back-btn">← 返回首页</div><h2 class="text-4xl font-extrabold">学术汇报展示</h2></section>
+
+    <footer class="py-20 text-center border-t border-white/5 opacity-50">
+        <p class="text-xs uppercase tracking-[0.3em]">Fisher Yu Portfolio 2025</p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            const allPages = ['main-page', 'media-duolingo', 'media-global', 'media-assets', 'influ-bili', 'influ-red', 'skill-live', 'skill-report', 'skill-host'];
+            allPages.forEach(id => {
+                const el = document.getElementById(id);
+                if(el) el.classList.add('hidden-page');
+            });
+            const target = document.getElementById(pageId === 'main' ? 'main-page' : pageId);
+            if (target) {
+                target.classList.remove('hidden-page');
+                window.scrollTo(0, 0);
+            }
+            const navLinks = document.getElementById('nav-links');
+            if (pageId === 'main') {
+                navLinks.style.opacity = '1';
+                navLinks.style.pointerEvents = 'auto';
+            } else {
+                navLinks.style.opacity = '0';
+                navLinks.style.pointerEvents = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

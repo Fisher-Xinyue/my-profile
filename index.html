@@ -354,10 +354,10 @@
         <div onclick="showPage('main')" class="back-btn">← 返回首页</div>
         <h2 class="text-4xl font-extrabold mb-4">短视频主播展示</h2>
         <p class="text-gray-500 mb-12 italic">丰富的直播控场与内容互动实战经验</p>
+         <!-- 带控制条的视频：移除了 muted 属性，点击播放按钮应有声音 -->
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
-            <!-- 直接嵌入视频案例 2：带控制条的视频 -->
-            <div class="thumb-base aspect-9-16 group">
-                <video src="assets/live-video-1.mp4" controls poster="assets/live-1.jpg" class="w-full h-full object-cover">
+          <div class="thumb-base aspect-9-16 group">
+                <video src="assets/live-video-1.mp4" controls poster="assets/live-poster-2.jpg" class="w-full h-full object-cover">
                 </video>
             </div>
             <!-- 更多卡片... -->

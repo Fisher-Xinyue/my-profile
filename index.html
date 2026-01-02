@@ -292,7 +292,7 @@
         <div onclick="showPage('main')" class="back-btn">← 返回首页</div>
         <h2 class="text-4xl font-extrabold mb-4">微信推送与媒体素材</h2>
         <p class="text-gray-400 mb-10">点击封面跳转至微信公众号原文</p>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
             <!-- 微信推送卡片 1 -->
             <a href="https://v.xiumi.us/board/v5/4L3yo/665158700" target="_blank" class="block group">
@@ -347,17 +347,49 @@
         </div>
     </section>
 
-    <!-- 主播/汇报/主持 详情页 (以主持为例) -->
-    <section id="skill-host" class="page-transition hidden-page min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto">
+    <!-- 详情页面（由 JS 控制显示） -->
+
+    <!-- 短视频主播 -->
+    <section id="skill-live" class="page-transition hidden-page min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto text-center">
         <div onclick="showPage('main')" class="back-btn">← 返回首页</div>
-        <h2 class="text-4xl font-extrabold mb-10">双语主持现场</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
-            <div class="aspect-[4/5] glass-card rounded-3xl overflow-hidden">
-                <img src="assets/host-1.jpg" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-zinc-800\'>现场照1</div>'">
-            </div>
-            <div class="aspect-[4/5] glass-card rounded-3xl overflow-hidden">
-                <img src="assets/host-2.jpg" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-zinc-800\'>现场照2</div>'">
-            </div>
+        <h2 class="text-4xl font-extrabold mb-4">短视频主播展示</h2>
+        <p class="text-gray-500 mb-12 italic">丰富的直播控场与内容互动实战经验</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+            <a href="你的链接" target="_blank" class="thumb-base aspect-9-16">
+                <img src="assets/live-1.jpg" onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-zinc-700\'>直播封面1</div>'">
+                <div class="overlay-hint"><span class="text-white text-xs border border-white px-3 py-1 rounded-full uppercase">查看回放</span></div>
+            </a>
+            <!-- 更多卡片... -->
+        </div>
+    </section>
+
+    <!-- 学术汇报 -->
+    <section id="skill-report" class="page-transition hidden-page min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto text-center">
+        <div onclick="showPage('main')" class="back-btn">← 返回首页</div>
+        <h2 class="text-4xl font-extrabold mb-4">学术汇报展示</h2>
+        <p class="text-gray-500 mb-12 italic">亚太营销学术会议入选论文汇报 (1st Author)</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <a href="你的链接" target="_blank" class="thumb-base aspect-16-9">
+                <img src="assets/report-1.jpg" onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-zinc-700 bg-zinc-900\'>学术会议照片/PPT截图</div>'">
+                <div class="overlay-hint"><span class="text-white text-xs border border-white px-3 py-1 rounded-full uppercase">查看详情</span></div>
+            </a>
+            <a href="你的链接" target="_blank" class="thumb-base aspect-16-9">
+                <img src="assets/report-2.jpg" onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-zinc-700 bg-zinc-900\'>论文海报/成果展示</div>'">
+                <div class="overlay-hint"><span class="text-white text-xs border border-white px-3 py-1 rounded-full uppercase">查看详情</span></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- 双语主持 -->
+    <section id="skill-host" class="page-transition hidden-page min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto text-center">
+        <div onclick="showPage('main')" class="back-btn">← 返回首页</div>
+        <h2 class="text-4xl font-extrabold mb-4">双语主持作品集</h2>
+        <p class="text-gray-500 mb-12 italic">中外论坛、商学院大型活动双语司仪经验</p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-left">
+            <a href="你的链接" target="_blank" class="thumb-base aspect-3-4">
+                <img src="assets/host-1.jpg" onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-zinc-700\'>主持现场照 1</div>'">
+                <div class="overlay-hint"><span class="text-white text-xs border border-white px-3 py-1 rounded-full uppercase">查看活动记录</span></div>
+            </a>
         </div>
     </section>
 

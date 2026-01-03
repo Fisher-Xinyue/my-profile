@@ -304,7 +304,7 @@
                     </div>
                     <div class="thumb-base aspect-square mb-6">
                         <div class="absolute inset-0 bg-zinc-900 flex items-center justify-center">
-                            <span class="text-zinc-700 text-xs">Guest Interview Post</span>
+                            <span class="text-zinc-400 text-xs">Guest Interview Post</span>
                         </div>
                         <div class="overlay-hint"><span class="text-white text-[10px] border border-white px-3 py-1 rounded-full">VIEW LINKEDIN</span></div>
                     </div>
@@ -325,7 +325,7 @@
                     </div>
                     <div class="thumb-base aspect-square mb-6">
                         <div class="absolute inset-0 bg-zinc-900 flex items-center justify-center">
-                            <span class="text-zinc-700 text-xs">Visual News Report</span>
+                            <span class="text-zinc-400 text-xs">Visual News Report</span>
                         </div>
                         <div class="overlay-hint"><span class="text-white text-[10px] border border-white px-3 py-1 rounded-full">VIEW LINKEDIN</span></div>
                     </div>
@@ -364,20 +364,55 @@
         </div>
     </section>
     
-    <!-- 微信推送 & 物料详情 -->
+     <!-- 微信推送 & 物料详情 -->
     <section id="media-assets" class="page-transition hidden-page min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto">
         <div onclick="showPage('main')" class="back-btn">← 返回首页</div>
-        <h2 class="text-4xl font-extrabold mb-4">微信推送与媒体素材</h2>
-        <p class="text-gray-400 mb-10">点击封面跳转至微信公众号原文</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <a href="https://v.xiumi.us/board/v5/4L3yo/665158700" target="_blank" class="block group">
-                <div class="thumbnail-card-horizontal">
-                    <div class="flex items-center justify-center h-full text-zinc-700 bg-zinc-900">微信推送封面 1</div>
-                    <div class="overlay-hint"><span class="text-white text-xs font-bold border border-white px-6 py-2 rounded-full">阅读推文</span></div>
+        
+        <!-- 板块一：微信推送 -->
+        <div class="mb-20">
+            <h2 class="text-4xl font-extrabold mb-4">微信推送作品</h2>
+            <p class="text-gray-400 mb-10">点击封面跳转至微信公众号原文</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <a href="https://v.xiumi.us/board/v5/4L3yo/665158700" target="_blank" class="block group">
+                     <img src="assets/weixin-cover.jpg" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-zinc-800\'>封面</div>'">
+                    <div class="thumbnail-card-horizontal">
+                        <div class="flex items-center justify-center h-full text-zinc-700 bg-zinc-900">
+                             <!-- 微信推文封面图占位 -->
+                             微信推送封面 1
+                        </div>
+                        <div class="overlay-hint"><span class="text-white text-xs font-bold border border-white px-6 py-2 rounded-full">阅读推文</span></div>
+                    </div>
+                    <h4 class="mt-4 text-xl font-bold group-hover:text-purple-400 transition">科技产品推广</h4>
+                    <p class="text-gray-500 text-sm mt-1">负责文案撰写与排版设计</p>
+                </a>
+                <!-- 如果有更多推文可以按此格式添加 -->
+            </div>
+        </div>
+
+        <!-- 板块二：短视频物料 (直接上传) -->
+        <div>
+            <h2 class="text-4xl font-extrabold mb-4">短视频媒体素材</h2>
+            <p class="text-gray-400 mb-10">基于 GitHub 直接托管的视频素材展示</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-4 rounded-[2rem]">
+                    <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden mb-4">
+                        <video controls preload="metadata">
+                            <source src="assets/video1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h5 class="text-lg font-bold px-2">宣传物料 01</h5>
+                    <p class="text-gray-500 text-xs px-2 mt-1">视频剪辑与视觉包装</p>
                 </div>
-                <h4 class="mt-4 text-xl font-bold group-hover:text-purple-400 transition">科技产品推广</h4>
-                <p class="text-gray-500 text-sm mt-1">负责文案撰写与排版设计</p>
-            </a>
+                <div class="glass-card p-4 rounded-[2rem]">
+                    <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden mb-4">
+                        <video controls preload="metadata">
+                            <source src="assets/video2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h5 class="text-lg font-bold px-2">宣传物料 02</h5>
+                    <p class="text-gray-500 text-xs px-2 mt-1">创意短视频制作</p>
+                </div>
+            </div>
         </div>
     </section>
     

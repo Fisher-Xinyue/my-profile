@@ -475,12 +475,22 @@
         <p class="text-xs uppercase tracking-[0.3em]">Fisher Yu Portfolio 2025</p>
     </footer>
 
-   <script>
+    <script>
         function showPage(pageId) {
-            // 所有详情页 ID
-            const allPages = ['main-page', 'media-duolingo', 'media-global', 'media-assets', 'influ-bili', 'influ-red'];
+            // 定义所有需要控制的页面 ID
+            const allPages = [
+                'main-page', 
+                'media-duolingo', 
+                'media-global', 
+                'media-assets', 
+                'influ-bili', 
+                'influ-red',
+                'skill-live',
+                'skill-report',
+                'skill-host'
+            ];
             
-            // 隐藏所有页面
+            // 1. 隐藏所有页面
             allPages.forEach(id => {
                 const el = document.getElementById(id);
                 if(el) {
@@ -488,7 +498,7 @@
                 }
             });
 
-            // 显示目标页面
+            // 2. 显示选中的页面
             const targetId = (pageId === 'main') ? 'main-page' : pageId;
             const target = document.getElementById(targetId);
             if (target) {
@@ -496,7 +506,7 @@
                 window.scrollTo(0, 0);
             }
 
-            // 控制导航栏锚点显示
+            // 3. 只有在主页才显示导航锚点
             const navLinks = document.getElementById('nav-links');
             if (pageId === 'main') {
                 navLinks.style.opacity = '1';

@@ -287,7 +287,7 @@
         </div>
     </section>
 
-   <!-- 海外官方社媒详情页 (根据新链接更新) -->
+  <!-- 海外官方社媒详情页 -->
     <section id="media-global" class="page-transition hidden-page min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto">
         <div onclick="showPage('main')" class="back-btn">← 返回首页</div>
         <div class="mb-16">
@@ -296,21 +296,17 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <!-- 1. LinkedIn: 嘉宾采访 -->
-            <div class="glass-card rounded-[2rem] overflow-hidden">
+            <!-- LinkedIn: 嘉宾采访 -->
+            <div class="glass-card rounded-[2rem] overflow-hidden group">
                 <div class="p-8">
                     <div class="flex justify-between items-center mb-6">
                         <span class="social-tag">LinkedIn</span>
-                        <div class="flex space-x-1">
-                            <span class="w-1.5 h-1.5 bg-zinc-700 rounded-full"></span>
-                            <span class="w-1.5 h-1.5 bg-zinc-700 rounded-full"></span>
-                        </div>
                     </div>
                     <div class="thumb-base aspect-square mb-6">
-                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=800&auto=format&fit=crop" alt="LinkedIn Post">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <span class="bg-black/40 backdrop-blur px-4 py-2 rounded-full text-[10px] font-bold">Guest Interview Post</span>
+                        <div class="absolute inset-0 bg-zinc-900 flex items-center justify-center">
+                            <span class="text-zinc-700 text-xs">Guest Interview Post</span>
                         </div>
+                        <div class="overlay-hint"><span class="text-white text-[10px] border border-white px-3 py-1 rounded-full">VIEW LINKEDIN</span></div>
                     </div>
                     <h5 class="font-bold text-lg mb-3">UN Open Source Week 嘉宾采访</h5>
                     <p class="text-gray-500 text-xs leading-relaxed mb-4">通过 LinkedIn 发布开源周重量级嘉宾采访，策划互动话题，提升专业社区影响力。</p>
@@ -321,21 +317,17 @@
                 </div>
             </div>
 
-            <!-- 2. LinkedIn: 图文报道 -->
-            <div class="glass-card rounded-[2rem] overflow-hidden">
+            <!-- LinkedIn: 图文报道 -->
+            <div class="glass-card rounded-[2rem] overflow-hidden group">
                 <div class="p-8">
                     <div class="flex justify-between items-center mb-6">
                         <span class="social-tag">LinkedIn</span>
-                        <div class="flex space-x-1">
-                            <span class="w-1.5 h-1.5 bg-zinc-700 rounded-full"></span>
-                            <span class="w-1.5 h-1.5 bg-zinc-700 rounded-full"></span>
-                        </div>
                     </div>
                     <div class="thumb-base aspect-square mb-6">
-                        <img src="https://images.unsplash.com/photo-1522071823991-b19c77663cf8?q=80&w=800&auto=format&fit=crop" alt="News Report">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <span class="bg-black/40 backdrop-blur px-4 py-2 rounded-full text-[10px] font-bold">Visual News Report</span>
+                        <div class="absolute inset-0 bg-zinc-900 flex items-center justify-center">
+                            <span class="text-zinc-700 text-xs">Visual News Report</span>
                         </div>
+                        <div class="overlay-hint"><span class="text-white text-[10px] border border-white px-3 py-1 rounded-full">VIEW LINKEDIN</span></div>
                     </div>
                     <h5 class="font-bold text-lg mb-3">官方图文深度报道</h5>
                     <p class="text-gray-500 text-xs leading-relaxed mb-4">负责数字合作与开源项目的全方位图文动态更新，单帖覆盖上万名专业领域订阅者。</p>
@@ -346,8 +338,8 @@
                 </div>
             </div>
 
-            <!-- 3. Facebook & YouTube: 视频/活动 -->
-            <div class="glass-card rounded-[2rem] overflow-hidden border-purple-500/20">
+            <!-- Facebook & YouTube: 视频/活动 -->
+            <div class="glass-card rounded-[2rem] overflow-hidden border-purple-500/20 group">
                 <div class="p-8">
                     <div class="flex justify-between items-center mb-6">
                         <div class="flex space-x-2">
@@ -372,35 +364,19 @@
         </div>
     </section>
     
-    <!-- 详情页：微信推送 & 其他素材 -->
+    <!-- 微信推送 & 物料详情 -->
     <section id="media-assets" class="page-transition hidden-page min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto">
         <div onclick="showPage('main')" class="back-btn">← 返回首页</div>
         <h2 class="text-4xl font-extrabold mb-4">微信推送与媒体素材</h2>
         <p class="text-gray-400 mb-10">点击封面跳转至微信公众号原文</p>
-
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <!-- 微信推送卡片 1 -->
             <a href="https://v.xiumi.us/board/v5/4L3yo/665158700" target="_blank" class="block group">
                 <div class="thumbnail-card-horizontal">
-                    <img src="assets/weixin-cover.jpg" onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-zinc-700 bg-zinc-900\'>微信推送封面 1 (16:9)</div>'">
-                    <div class="overlay-hint">
-                        <span class="text-white text-xs font-bold border border-white px-6 py-2 rounded-full">阅读推文</span>
-                    </div>
+                    <div class="flex items-center justify-center h-full text-zinc-700 bg-zinc-900">微信推送封面 1</div>
+                    <div class="overlay-hint"><span class="text-white text-xs font-bold border border-white px-6 py-2 rounded-full">阅读推文</span></div>
                 </div>
                 <h4 class="mt-4 text-xl font-bold group-hover:text-purple-400 transition">科技产品推广</h4>
                 <p class="text-gray-500 text-sm mt-1">负责文案撰写与排版设计</p>
-            </a>
-
-            <!-- 微信推送卡片 2 -->
-            <a href="你的微信推送链接2" target="_blank" class="block group">
-                <div class="thumbnail-card-horizontal">
-                    <img src="assets/wechat-2.jpg" onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-zinc-700 bg-zinc-900\'>微信推送封面 2 (16:9)</div>'">
-                    <div class="overlay-hint">
-                        <span class="text-white text-xs font-bold border border-white px-6 py-2 rounded-full">阅读推文</span>
-                    </div>
-                </div>
-                <h4 class="mt-4 text-xl font-bold group-hover:text-purple-400 transition">推送标题：XXX深度报道</h4>
-                <p class="text-gray-500 text-sm mt-1">负责视觉创意与全案策划</p>
             </a>
         </div>
     </section>
